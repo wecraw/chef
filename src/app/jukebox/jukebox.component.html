@@ -1,0 +1,40 @@
+<div class="col-12">
+  <div class="jukebox">
+    <div class="screen">
+      <div class="art">
+        <img [src]="selectedSong.albumArtUrl" alt="Album cover" />
+      </div>
+    </div>
+    <div class="screen-drop-shadow"></div>
+    <div class="row">
+      <div class="col-5 song-select d-flex justify-content-center">
+        <div class="song">
+          <div class="label">Herbie Jam</div>
+        </div>
+        <div class="song">
+          <div class="label">Herbie Jam</div>
+        </div>
+      </div>
+      <div class="col-2 play-button">
+        <iframe
+          [src]="selectedSong.spotifyUrl"
+          width="400px"
+          height="400px"
+          frameBorder="0"
+          allowfullscreen=""
+          scrolling="no"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="col-5 song-select d-flex justify-content-center">
+        <div class="song">
+          <div class="label">Herbie Jam</div>
+        </div>
+        <div class="song">
+          <div class="label">Herbie Jam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
