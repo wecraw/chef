@@ -1,5 +1,7 @@
+import { SafeUrl } from '@angular/platform-browser';
+
 export interface ISong {
   name: string;
-  spotifyUrl: string;
+  spotifyUrl: SafeUrl;
   albumArtUrl: string;
 }

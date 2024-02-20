@@ -12,14 +12,14 @@
     <div class="row">
       <div class="col-5 song-select d-flex justify-content-center">
         <ng-container *ngFor="let song of leftSongs">
-          <div class="song" (click)="selectSong(song)">
+          <button class="song" (click)="selectSong($event, song)">
             <div class="label">{{ song.name }}</div>
-          </div>
+          </button>
         </ng-container>
       </div>
       <div class="col-2 play-button">
         <iframe
-          [src]="sanitizeUrl(selectedSong.spotifyUrl)"
+          [src]="getSourceUrl(selectedSong)"
           width="400px"
           height="400px"
           frameBorder="0"
@@ -31,9 +31,13 @@
       </div>
       <div class="col-5 song-select d-flex justify-content-center">
         <ng-container *ngFor="let song of rightSongs">
-          <div class="song" (click)="selectSong(song)">
+          <button
+            [disabled]="song.name === '' || song.name === 'Coming Soon'"
+            class="song"
+            (click)="selectSong($event, song)"
+          >
             <div class="label">{{ song.name }}</div>
-          </div>
+          </button>
         </ng-container>
       </div>
     </div>
