@@ -1,23 +1,25 @@
 <div class="col-12">
   <div class="jukebox">
     <div class="screen">
-      <div class="art">
+      <div
+        class="art"
+        [ngClass]="{ 'slide-in-left': slideIn, 'slide-out-right': slideOut }"
+      >
         <img [src]="selectedSong.albumArtUrl" alt="Album cover" />
       </div>
     </div>
     <div class="screen-drop-shadow"></div>
     <div class="row">
       <div class="col-5 song-select d-flex justify-content-center">
-        <div class="song">
-          <div class="label">Herbie Jam</div>
-        </div>
-        <div class="song">
-          <div class="label">Herbie Jam</div>
-        </div>
+        <ng-container *ngFor="let song of leftSongs">
+          <div class="song" (click)="selectSong(song)">
+            <div class="label">{{ song.name }}</div>
+          </div>
+        </ng-container>
       </div>
       <div class="col-2 play-button">
         <iframe
-          [src]="selectedSong.spotifyUrl"
+          [src]="sanitizeUrl(selectedSong.spotifyUrl)"
           width="400px"
           height="400px"
           frameBorder="0"
@@ -28,12 +30,11 @@
         ></iframe>
       </div>
       <div class="col-5 song-select d-flex justify-content-center">
-        <div class="song">
-          <div class="label">Herbie Jam</div>
-        </div>
-        <div class="song">
-          <div class="label">Herbie Jam</div>
-        </div>
+        <ng-container *ngFor="let song of rightSongs">
+          <div class="song" (click)="selectSong(song)">
+            <div class="label">{{ song.name }}</div>
+          </div>
+        </ng-container>
       </div>
     </div>
   </div>
