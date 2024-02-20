@@ -72,4 +72,39 @@ export class JukeboxComponent {
   getSourceUrl(song: ISong): SafeUrl {
     return song.spotifyUrl;
   }
+
+  chefNames = [
+    'Creative Hues Erupting Funk',
+    'Chromatic Heat Energy Fusion',
+    'Celestial Groove Evolutionary Force',
+    'Conscious Harmonic Energy Flow',
+    'Captivating Harmonic Eclectic Funk',
+    'Cool Heat Embracing Funk',
+    'Coupla Homies Emitting Frequencies',
+    'Crazy Harmonic Euphoric Funk',
+    'Creative Hues Erupting Funk',
+    'Chromatic Heat Energy Fusion',
+    'Celestial Groove Evolutionary Force',
+    'Conscious Harmonic Energy Flow',
+    'Captivating Harmonic Eclectic Funk',
+    'Cool Heat Embracing Funk',
+    'Coupla Homies Emitting Frequencies',
+    'Crazy Harmonic Euphoric Funk',
+    'Creative Hues Erupting Funk',
+    'Chromatic Heat Energy Fusion',
+    'Celestial Groove Evolutionary Force',
+    'Conscious Harmonic Energy Flow',
+    'Captivating Harmonic Eclectic Funk',
+    'Cool Heat Embracing Funk',
+    'Coupla Homies Emitting Frequencies',
+    'Crazy Harmonic Euphoric Funk',
+    'Creative Hues Erupting Funk',
+    'Chromatic Heat Energy Fusion',
+    'Celestial Groove Evolutionary Force',
+    'Conscious Harmonic Energy Flow',
+    'Captivating Harmonic Eclectic Funk',
+    'Cool Heat Embracing Funk',
+    'Coupla Homies Emitting Frequencies',
+    'Crazy Harmonic Euphoric Funk',
+  ];
 }

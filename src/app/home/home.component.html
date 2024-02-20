@@ -1,5 +1,22 @@
 <div class="container">
   <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <img src="assets/cheflogo.png" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="wrapper">
+      <div class="parenthesis">(</div>
+      <div class="col-12 ticker">
+        <app-marquee>
+          <span *ngFor="let name of chefNames"> {{ name }} •</span>
+        </app-marquee>
+      </div>
+      <div class="parenthesis">)</div>
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-12">
       <app-jukebox></app-jukebox>
     </div>
