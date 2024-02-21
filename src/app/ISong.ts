@@ -4,4 +4,6 @@ export interface ISong {
   name: string;
   spotifyUrl: SafeUrl;
   albumArtUrl: string;
+  fontSize?: string;
+  marginTop?: string;
 }

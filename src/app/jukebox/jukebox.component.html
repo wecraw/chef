@@ -1,45 +1,127 @@
 <div class="col-12 d-flex justify-content-center">
   <div class="jukebox">
-    <div class="screen">
-      <div
-        class="art"
-        [ngClass]="{ 'slide-in-left': slideIn, 'slide-out-right': slideOut }"
-      >
-        <img [src]="selectedSong.albumArtUrl" alt="Album cover" />
+    <div class="rings">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring last"></div>
+      <div class="leg"></div>
+    </div>
+    <div class="inner">
+      <div class="screen">
+        <div
+          class="art"
+          [ngClass]="{ 'slide-in-left': slideIn, 'slide-out-right': slideOut }"
+        >
+          <img [src]="selectedSong.albumArtUrl" alt="Album cover" />
+        </div>
+      </div>
+      <div class="screen-drop-shadow"></div>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-4 decoration justifty-content-left left">
+          <div class="oval-short"></div>
+          <div class="oval-long"></div>
+          <div class="oval-short"></div>
+        </div>
+        <div class="col-2 play-button">
+          <iframe
+            [src]="getSourceUrl(selectedSong)"
+            width="400px"
+            height="400px"
+            frameBorder="0"
+            allowfullscreen=""
+            scrolling="no"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="col-4 decoration right">
+          <div class="oval-short"></div>
+          <div class="oval-long"></div>
+          <div class="oval-short"></div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row flex-nowrap songs">
+        <div class="col-6 song-select d-flex justify-content-center">
+          <ng-container *ngFor="let song of leftSongs">
+            <button class="song" (click)="selectSong($event, song)">
+              <div
+                class="label"
+                [ngStyle]="{
+                  'margin-top': song.marginTop ? song.marginTop : '0',
+                  'font-size': song.fontSize ? song.fontSize : '16pt'
+                }"
+              >
+                {{ song.name }}
+              </div>
+            </button>
+          </ng-container>
+        </div>
+
+        <div class="col-6 song-select d-flex justify-content-center">
+          <ng-container *ngFor="let song of rightSongs">
+            <button
+              [disabled]="song.name === '' || song.name === 'Coming Soon'"
+              class="song"
+              (click)="selectSong($event, song)"
+            >
+              <div
+                class="label"
+                [ngStyle]="{
+                  'margin-top': song.marginTop ? song.marginTop : '0',
+                  'font-size': song.fontSize ? song.fontSize : '16pt'
+                }"
+              >
+                {{ song.name }}
+              </div>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="speaker-top"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="speaker">
+            <div class="inner-speaker">
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+              <div class="grill"></div>
+
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+              <div class="grill right"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="screen-drop-shadow"></div>
-    <div class="row">
-      <div class="col-5 song-select d-flex justify-content-center">
-        <ng-container *ngFor="let song of leftSongs">
-          <button class="song" (click)="selectSong($event, song)">
-            <div class="label">{{ song.name }}</div>
-          </button>
-        </ng-container>
-      </div>
-      <div class="col-2 play-button">
-        <iframe
-          [src]="getSourceUrl(selectedSong)"
-          width="400px"
-          height="400px"
-          frameBorder="0"
-          allowfullscreen=""
-          scrolling="no"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </div>
-      <div class="col-5 song-select d-flex justify-content-center">
-        <ng-container *ngFor="let song of rightSongs">
-          <button
-            [disabled]="song.name === '' || song.name === 'Coming Soon'"
-            class="song"
-            (click)="selectSong($event, song)"
-          >
-            <div class="label">{{ song.name }}</div>
-          </button>
-        </ng-container>
-      </div>
+    <div class="rings right">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring last"></div>
+      <div class="leg"></div>
     </div>
   </div>
 </div>

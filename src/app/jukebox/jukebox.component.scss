@@ -1,33 +1,84 @@
+$silver: rgb(171, 194, 208);
+$black: #000;
+$neon-orange: rgb(248, 170, 65);
+$speaker-grill-silver: #aac6d6;
+
 .jukebox {
   margin-top: 10px;
   height: 680px;
   width: 100%;
   max-width: 500px;
   padding: 15px;
-  background-color: #fff;
+  padding-bottom: 0;
+  background-color: $neon-orange;
   padding-top: 30px;
+  position: relative;
   border: 3px solid #000;
+  border-bottom: none;
   box-shadow: 0 6px #000;
   border-top-left-radius: 250px;
   border-top-right-radius: 250px;
-  .screen {
-    height: 225px;
-    width: 300px;
+  //   overflow: hidden;
+  .rings {
+    position: absolute;
+    left: -13px;
+    top: 255px;
+
+    &.right {
+      right: -13px;
+      left: auto;
+    }
+    .leg {
+      height: 122px;
+      margin-left: 5px;
+      width: 55px;
+      background-color: #744235;
+      border: 3px solid #000;
+    }
+    .ring {
+      margin-bottom: 3px;
+      border: 3px solid #000;
+
+      height: 15px;
+      width: 65px;
+      border-radius: 5px;
+      background: $silver;
+      &.last {
+        margin-top: 250px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .inner {
+    border: 3px solid #000;
+    border-top-left-radius: 250px;
+    border-top-right-radius: 250px;
+    height: 100%;
+    width: 90%;
+    padding-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid black;
+    background-color: rgb(193 85 36);
+  }
+  .screen {
+    height: 200px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 15px solid $silver;
+    outline: 3px solid $black;
     box-shadow: 0 6px #000;
-    border-top-left-radius: 140px;
-    border-top-right-radius: 140px;
-    background-color: #fd7f20;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 9999px;
+    background-color: #666;
     overflow: hidden;
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
     .art {
-      height: 160px;
-      width: 160px;
+      height: 125px;
+      width: 125px;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 40px;
+      margin-top: 30px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
       img {
@@ -43,10 +94,43 @@
   }
   .screen-drop-shadow {
     height: 2px;
-    width: 300px;
-    background: black;
+    width: 100%;
+    // background: $black;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .decoration {
+    display: flex;
+    margin-top: 15px;
+    flex-direction: column;
+    padding: 0;
+
+    .oval-short {
+      height: 5px;
+      width: 60%;
+      background-color: #000;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+      margin-top: 2px;
+    }
+    .oval-long {
+      height: 5px;
+      width: 75%;
+      background-color: #000;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5px;
+      margin-top: 2px;
+    }
+  }
+
+  @media (min-width: 576px) {
+    iframe {
+      margin-left: -343px !important;
+      margin-top: -283px !important;
+    }
   }
   .play-button {
     height: 46px;
@@ -55,7 +139,7 @@
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 23px;
+    margin-top: 5px;
     border: 2px solid #000;
     box-shadow: 0 4px #000;
     iframe {
@@ -63,10 +147,20 @@
       margin-top: -281px;
     }
   }
+  .songs {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .song-select {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    &.left {
+      margin-left: 10px;
+    }
+    &.right {
+      margin-right: 10px;
+    }
     .song {
       margin-bottom: 10px;
       height: 30px;
@@ -74,6 +168,7 @@
       border: 2px solid #000;
       box-shadow: 0 4px #000;
       background: #fff;
+      overflow: hidden;
       cursor: pointer;
       &:active {
         height: 28px;
@@ -93,10 +188,52 @@
       .label {
         font-family: "Indie Flower", cursive;
         font-weight: 400;
-        font-size: 16pt;
         font-style: normal;
         text-align: center;
-        margin-top: -4px;
+        color: $black !important;
+      }
+    }
+  }
+
+  .speaker-top {
+    margin-top: 10px;
+    height: 20px;
+    background-color: $speaker-grill-silver;
+    width: 60%;
+    outline: 3px solid $black;
+  }
+  .speaker {
+    height: 225px;
+    width: 60%;
+    background-color: #4f606e;
+    border: 35px solid $neon-orange;
+    border-top: none;
+    outline: 3px solid $black;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    box-shadow: 0 6px #000;
+    .inner-speaker {
+      height: 100%;
+      width: 100%;
+      border-bottom-left-radius: 9999px;
+      border-bottom-right-radius: 9999px;
+      //   border: 3px solid $black;
+      border-top: none;
+      overflow: hidden;
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+
+      .grill {
+        height: 5px;
+        width: 770px;
+        transform: rotate(60deg);
+        background-color: $speaker-grill-silver;
+        margin-top: 40px;
+        margin-left: -200px;
+        &.right {
+          transform: rotate(-60deg);
+          margin-top: -60px;
+          margin-left: -360px;
+        }
       }
     }
   }

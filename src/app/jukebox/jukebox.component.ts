@@ -21,6 +21,7 @@ export class JukeboxComponent {
   leftSongs: ISong[] = [
     {
       name: 'Herbie Jam',
+      fontSize: '14pt',
       spotifyUrl: this.sanitizeUrl(
         'https://open.spotify.com/embed/track/3msEvJljAOEYFE9oiLu98Z?utm_source=generator'
       ),
@@ -29,6 +30,7 @@ export class JukeboxComponent {
     },
     {
       name: 'Kilgore',
+      marginTop: '-4px',
       spotifyUrl: this.sanitizeUrl(
         'https://open.spotify.com/embed/track/2yXUcLQFQM8PGVOW2B9sMo?utm_source=generator'
       ),
@@ -39,6 +41,7 @@ export class JukeboxComponent {
   rightSongs: ISong[] = [
     {
       name: 'Peach Funk',
+      fontSize: '14pt',
       spotifyUrl: this.sanitizeUrl(
         'https://open.spotify.com/embed/track/3nokHVueV9TLQrVEwzKsu3?utm_source=generator'
       ),
