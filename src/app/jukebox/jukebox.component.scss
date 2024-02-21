@@ -170,6 +170,8 @@ $speaker-grill-silver: #aac6d6;
       background: #fff;
       overflow: hidden;
       cursor: pointer;
+      padding-left: 0;
+      padding-right: 0;
       &:active {
         height: 28px;
         margin-top: 2px;
@@ -186,6 +188,7 @@ $speaker-grill-silver: #aac6d6;
         cursor: default;
       }
       .label {
+        white-space: nowrap;
         font-family: "Indie Flower", cursive;
         font-weight: 400;
         font-style: normal;
@@ -212,6 +215,7 @@ $speaker-grill-silver: #aac6d6;
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
     box-shadow: 0 6px #000;
+
     .inner-speaker {
       height: 100%;
       width: 100%;
