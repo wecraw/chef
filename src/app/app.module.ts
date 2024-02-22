@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { JukeboxComponent } from './jukebox/jukebox.component';
 import { MarqueeComponent } from './marquee/marquee.component';
 import { Home2Component } from './home2/home2.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { Home2Component } from './home2/home2.component';
     HomeComponent,
     JukeboxComponent,
     MarqueeComponent,
-    Home2Component
+    Home2Component,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
