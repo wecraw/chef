@@ -13,6 +13,32 @@
     transform-origin: top;
   }
 }
+
+.post-it {
+  height: 60px;
+  right: 0;
+  bottom: -40px;
+  position: absolute;
+  box-shadow: none;
+  transition: box-shadow, background-color, 0.1s;
+  border-radius: 20%;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffd700;
+    box-shadow: 0 0 10px 10px #ffd700;
+  }
+  img {
+    margin-left: auto;
+    height: 100%;
+    z-index: 999;
+    filter: drop-shadow(5px 5px 10px #000000);
+  }
+  .label {
+    position: absolute;
+    right: 160px;
+  }
+}
+
 .logo-container {
   margin-left: auto;
   margin-right: auto;
@@ -67,6 +93,8 @@
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 50px;
+  background-image: url("../../assets/wp2.jpeg");
+  background-repeat: repeat;
   filter: drop-shadow(1px 3px 3px #000000);
 
   &.long {
@@ -79,14 +107,20 @@
     height: 100%;
     width: 100%;
   }
-
+  .permanent-marker-regular {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+  }
   .header {
     height: 50px;
     width: 100%;
     background-color: red;
     border-bottom: 2px solid black;
     .label {
-      font-size: 32px;
+      line-height: 44px;
+      font-size: 38px;
       font-weight: bold;
       text-align: center;
       color: yellow;
