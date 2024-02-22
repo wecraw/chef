@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ISong } from '../ISong';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
@@ -8,6 +8,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   styleUrls: ['./jukebox.component.scss'],
 })
 export class JukeboxComponent {
+  @Input() compact: boolean = false;
+
   constructor(private sanitizer: DomSanitizer) {}
   slideIn: boolean = true;
   slideOut: boolean = false;
@@ -48,8 +50,10 @@ export class JukeboxComponent {
       albumArtUrl:
         'https://i.scdn.co/image/ab67616d0000b273b0a7cc01ebd0e0d025450e85',
     },
-    this.emptySong,
+    // this.emptySong,
   ];
+
+  allSongs = this.leftSongs.concat(this.rightSongs);
 
   selectedSong: ISong = this.leftSongs[0];
 

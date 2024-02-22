@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <img src="assets/cheflogo.png" />
+      <img class="logo" src="assets/cheflogo.png" />
     </div>
   </div>
   <div class="row">
@@ -16,9 +16,15 @@
     </div>
   </div>
 
+  <div class="row upcoming">
+    <div class="col-4 offset-4 d-flex justify-content-center">
+      <img class="poster" src="assets/upcoming.jpeg" />
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-12">
-      <app-jukebox></app-jukebox>
+      <app-jukebox [compact]="false"></app-jukebox>
     </div>
   </div>
 </div>

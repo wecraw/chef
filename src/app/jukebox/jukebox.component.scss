@@ -2,7 +2,12 @@ $silver: rgb(171, 194, 208);
 $black: #000;
 $neon-orange: rgb(248, 170, 65);
 $speaker-grill-silver: #aac6d6;
-
+.compact {
+  width: 280px;
+  .jukebox {
+    height: 475px;
+  }
+}
 .jukebox {
   margin-top: 10px;
   height: 680px;
@@ -18,15 +23,17 @@ $speaker-grill-silver: #aac6d6;
   box-shadow: 0 6px #000;
   border-top-left-radius: 250px;
   border-top-right-radius: 250px;
-  //   overflow: hidden;
+
   .rings {
     position: absolute;
     left: -13px;
     top: 255px;
+    width: fit-content;
 
     &.right {
-      right: -13px;
+      right: 52px;
       left: auto;
+      width: 0;
     }
     .leg {
       height: 122px;
@@ -46,6 +53,20 @@ $speaker-grill-silver: #aac6d6;
       &.last {
         margin-top: 250px;
         margin-bottom: 0;
+      }
+    }
+    &.compact {
+      &.right {
+        right: 40px;
+      }
+      .ring {
+        width: 53px;
+        &.last {
+          margin-top: 55px;
+        }
+      }
+      .leg {
+        width: 43px;
       }
     }
   }
@@ -73,6 +94,33 @@ $speaker-grill-silver: #aac6d6;
     background-color: #666;
     overflow: hidden;
     box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+
+    &.compact {
+      height: 120px;
+      .art {
+        height: 75px;
+        width: 75px;
+        margin-top: 10px;
+        border-radius: 50%;
+        img {
+          border-radius: 50%;
+        }
+        .record-center {
+          height: 25px;
+          width: 25px;
+          background: white;
+          border-radius: 50%;
+          position: absolute;
+          top: 25px;
+          z-index: 999;
+          margin-left: auto;
+          left: 25px;
+          text-align: center;
+          font-size: 28px;
+          line-height: 7px;
+        }
+      }
+    }
     .art {
       height: 125px;
       width: 125px;
@@ -108,7 +156,7 @@ $speaker-grill-silver: #aac6d6;
 
     .oval-short {
       height: 5px;
-      width: 60%;
+      width: 50%;
       background-color: #000;
       margin-left: auto;
       margin-right: auto;
@@ -117,12 +165,27 @@ $speaker-grill-silver: #aac6d6;
     }
     .oval-long {
       height: 5px;
-      width: 75%;
+      width: 65%;
       background-color: #000;
       margin-left: auto;
       margin-right: auto;
       border-radius: 5px;
       margin-top: 2px;
+    }
+
+    &.right {
+      .oval-long,
+      .oval-short {
+        margin-left: 5px;
+        margin-right: auto;
+      }
+    }
+    &.left {
+      .oval-long,
+      .oval-short {
+        margin-left: auto;
+        margin-right: 5px;
+      }
     }
   }
 
@@ -133,6 +196,7 @@ $speaker-grill-silver: #aac6d6;
     }
   }
   .play-button {
+    filter: drop-shadow(0px 0px 9px #ffff00);
     height: 46px;
     width: 46px;
     border-radius: 42px;
@@ -204,6 +268,12 @@ $speaker-grill-silver: #aac6d6;
     background-color: $speaker-grill-silver;
     width: 60%;
     outline: 3px solid $black;
+
+    &.compact {
+      height: 10px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
   }
   .speaker {
     height: 225px;
@@ -215,6 +285,12 @@ $speaker-grill-silver: #aac6d6;
     border-bottom-left-radius: 200px;
     border-bottom-right-radius: 200px;
     box-shadow: 0 6px #000;
+
+    &.compact {
+      height: 55px;
+      border: 15px solid $neon-orange;
+      border-top: none;
+    }
 
     .inner-speaker {
       height: 100%;

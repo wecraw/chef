@@ -1,4 +1,4 @@
-img {
+.logo {
   height: 80px;
   margin-top: 20px;
 }
@@ -17,5 +17,11 @@ img {
   font-style: normal;
   .parenthesis {
     font-size: 18pt;
+  }
+}
+.upcoming {
+  margin-top: 20px;
+  .poster {
+    width: 100%;
   }
 }
