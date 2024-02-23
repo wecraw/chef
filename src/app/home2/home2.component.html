@@ -1,48 +1,54 @@
 <!-- <div class="tree"></div> -->
 <div class="container tree">
-  <div class="row" style="padding-top: 30px">
-    <div style="margin-top: 30px; position: sticky; top: 10px">Test</div>
-
-    <div class="col-12">
-      <div class="logo-container">
-        <img src="assets/newlogo.svg" />
-        <div class="row">
-          <div class="wrapper">
-            <div class="parenthesis">(</div>
-            <div class="col-12 ticker">
-              <app-marquee>
-                <span *ngFor="let name of chefNames"> {{ name }} •</span>
-              </app-marquee>
-            </div>
-            <div class="parenthesis">)</div>
+  <div class="col-12">
+    <div class="logo-container">
+      <img src="assets/newlogo.svg" />
+      <div class="row">
+        <div class="wrapper">
+          <div class="parenthesis">(</div>
+          <div class="col-12 ticker">
+            <app-marquee>
+              <span *ngFor="let name of chefNames"> {{ name }} •</span>
+            </app-marquee>
           </div>
-        </div>
-        <div class="socials-row">
-          <i class="bi bi-spotify first"></i>
-          <i class="bi bi-music-note-beamed second"></i>
-          <i class="bi bi-youtube third"></i>
-          <i class="bi bi-instagram fourth"></i>
-          <i class="bi bi-envelope fifth"></i>
+          <div class="parenthesis">)</div>
         </div>
       </div>
-
-      <div class="poster-container" style="transform: rotate(2deg)">
-        <img class="poster" src="assets/upcoming.jpeg" />
-        <div class="post-it">
-          <img class="ticket" src="assets/tickets.png" />
-          <!-- <div class="label">Tickets</div> -->
-        </div>
-      </div>
-
-      <div
-        class="poster-container long"
-        style="transform: rotate(1deg); margin-bottom: 100px"
-      >
-        <div class="header permanent-marker-regular">
-          <div class="label">Fresh Beats!</div>
-        </div>
-        <app-jukebox [compact]="true"></app-jukebox>
+      <div class="socials-row">
+        <i class="bi bi-spotify first"></i>
+        <i class="bi bi-music-note-beamed second"></i>
+        <i class="bi bi-youtube third"></i>
+        <i class="bi bi-instagram fourth"></i>
+        <i class="bi bi-envelope fifth"></i>
       </div>
     </div>
+    <div class="menu">
+      <div class="menu-item">Shows</div>
+      <div class="menu-item">Music</div>
+      <div class="menu-item">Merch</div>
+      <div class="menu-item">Pics</div>
+    </div>
+
+    <div class="poster-container first" style="transform: rotate(2deg)">
+      <img
+        class="poster"
+        src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/upcoming.jpeg"
+      />
+      <div class="post-it">
+        <img class="ticket" src="assets/tickets.png" />
+        <!-- <div class="label">Tickets</div> -->
+      </div>
+    </div>
+
+    <div
+      class="poster-container long"
+      style="transform: rotate(1deg); margin-bottom: 100px"
+    >
+      <div class="header permanent-marker-regular">
+        <div class="label">Fresh Beats!</div>
+      </div>
+      <app-jukebox [compact]="true"></app-jukebox>
+    </div>
+    <div class="filler"></div>
   </div>
 </div>
