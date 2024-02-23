@@ -22,14 +22,20 @@
   display: flex;
   height: 50px;
   top: 0px;
-  margin-top: -150px;
+  margin-top: -180px; //account for negative margin from sticky menu
   width: 330px;
-  margin-left: 10px;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../../assets/wrinkled_paper.jpeg");
+  background-image: url("https://wec-chef-bucket.s3.us-west-2.amazonaws.com/wp2.jpeg");
   .menu-item {
     flex-grow: 1;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 50px; //needs to match height from above
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -127,7 +133,7 @@
     margin-bottom: 0;
   }
   &.first {
-    margin-top: 150px; //account for negative margin from sticky menu
+    margin-top: 180px; //account for negative margin from sticky menu
   }
   &.long {
     height: 600px;

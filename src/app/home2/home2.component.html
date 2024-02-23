@@ -23,13 +23,17 @@
       </div>
     </div>
     <div class="menu">
-      <div class="menu-item">Shows</div>
-      <div class="menu-item">Music</div>
+      <div (click)="onClick('shows')" class="menu-item">Shows</div>
+      <div (click)="onClick('music')" class="menu-item">Music</div>
       <div class="menu-item">Merch</div>
       <div class="menu-item">Pics</div>
     </div>
 
-    <div class="poster-container first" style="transform: rotate(2deg)">
+    <div
+      id="shows"
+      class="poster-container first"
+      style="transform: rotate(2deg)"
+    >
       <img
         class="poster"
         src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/upcoming.jpeg"
@@ -41,6 +45,7 @@
     </div>
 
     <div
+      id="music"
       class="poster-container long"
       style="transform: rotate(1deg); margin-bottom: 100px"
     >
