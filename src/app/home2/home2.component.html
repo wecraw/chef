@@ -1,8 +1,11 @@
 <!-- <div class="tree"></div> -->
 <div class="container tree">
-  <div class="col-12">
-    <div class="logo-container">
-      <img src="assets/newlogo.svg" />
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 logo-container">
+      <img
+        class="logo"
+        src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/newlogo.svg"
+      />
       <div class="row">
         <div class="wrapper">
           <div class="parenthesis">(</div>
@@ -15,45 +18,70 @@
         </div>
       </div>
       <div class="socials-row">
-        <i class="bi bi-spotify first"></i>
-        <i class="bi bi-music-note-beamed second"></i>
-        <i class="bi bi-youtube third"></i>
-        <i class="bi bi-instagram fourth"></i>
-        <i class="bi bi-envelope fifth"></i>
+        <a
+          href="https://open.spotify.com/artist/16FlDvM71NrgKA1Rdx1Afq?si=8f4547f8bfa74206"
+          ><i class="bi bi-spotify first"></i
+        ></a>
+        <a href="https://music.apple.com/us/artist/c-h-e-f/1694433155">
+          <i class="bi bi-music-note-beamed second"></i>
+        </a>
+        <a href="https://www.youtube.com/@CHEFtube">
+          <i class="bi bi-youtube third"></i>
+        </a>
+        <a href="https://www.instagram.com/bandcalledchef">
+          <i class="bi bi-instagram fourth"></i>
+        </a>
+        <a href="mailto:CHEFbandbooking@gmail.com">
+          <i class="bi bi-envelope fifth"></i>
+        </a>
       </div>
     </div>
-    <div class="menu">
-      <div (click)="onClick('shows')" class="menu-item">Shows</div>
-      <div (click)="onClick('music')" class="menu-item">Music</div>
-      <div class="menu-item">Merch</div>
-      <div class="menu-item">Pics</div>
-    </div>
-
-    <div
-      id="shows"
-      class="poster-container first"
-      style="transform: rotate(2deg)"
-    >
-      <img
-        class="poster"
-        src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/upcoming.jpeg"
-      />
-      <div class="post-it">
-        <img class="ticket" src="assets/tickets.png" />
-        <!-- <div class="label">Tickets</div> -->
-      </div>
-    </div>
-
-    <div
-      id="music"
-      class="poster-container long"
-      style="transform: rotate(1deg); margin-bottom: 100px"
-    >
-      <div class="header permanent-marker-regular">
-        <div class="label">Fresh Beats!</div>
-      </div>
-      <app-jukebox [compact]="true"></app-jukebox>
-    </div>
-    <div class="filler"></div>
   </div>
+
+  <div class="menu">
+    <div
+      (click)="onClick('shows')"
+      class="menu-item"
+      [ngClass]="{ active: scrollZone === 0 }"
+    >
+      Shows!
+    </div>
+    <div
+      (click)="onClick('music')"
+      class="menu-item"
+      [ngClass]="{ active: scrollZone === 1 }"
+    >
+      Music!
+    </div>
+    <div class="menu-item">Merch!</div>
+    <div class="menu-item">Pics!</div>
+  </div>
+
+  <div id="shows" style="margin-bottom: 30px"></div>
+
+  <div class="poster-container first" style="transform: rotate(1deg)">
+    <img
+      class="poster"
+      src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/upcoming.jpeg"
+    />
+    <div class="post-it">
+      <img
+        class="ticket"
+        src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/tickets.png"
+      />
+      <!-- <div class="label">Tickets</div> -->
+    </div>
+  </div>
+  <div id="music" style="margin-bottom: 30px"></div>
+
+  <div
+    class="poster-container long"
+    style="transform: rotate(-0.5deg); margin-bottom: 100px"
+  >
+    <div class="header permanent-marker-regular">
+      <div class="label">Fresh Beats!</div>
+    </div>
+    <app-jukebox [compact]="true"></app-jukebox>
+  </div>
+  <div class="filler"></div>
 </div>

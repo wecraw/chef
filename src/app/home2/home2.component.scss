@@ -1,7 +1,7 @@
 .tree {
   background-size: 356px;
   background-repeat: repeat-y;
-  background-image: url("../../assets/pole-long.png");
+  background-image: url("https://wec-chef-bucket.s3.us-west-2.amazonaws.com/pole-long.png");
   filter: drop-shadow(5px 5px 10px #000000);
   background-position: center;
   padding-top: 40px;
@@ -11,17 +11,23 @@
     background-size: 450px;
   }
 }
-
+.staples {
+  display: flex;
+  position: absolute;
+}
 .filler {
   height: 50px;
 }
 
 .menu {
   position: sticky;
-  z-index: 999999999;
+  z-index: 999999;
   display: flex;
   height: 50px;
-  top: 0px;
+  font-family: "Archivo Black", sans-serif;
+  border-radius: 50px;
+  border: 2px solid #000;
+  top: 10px;
   margin-top: -180px; //account for negative margin from sticky menu
   width: 330px;
   margin-left: auto;
@@ -32,9 +38,21 @@
     text-align: center;
     cursor: pointer;
     font-weight: bold;
-    line-height: 50px; //needs to match height from above
+    line-height: 47px;
     &:hover {
       text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+    @media (hover: none) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.active {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
     }
   }
 }
@@ -59,6 +77,12 @@
     background-color: #ffd700;
     box-shadow: 0 0 10px 10px #ffd700;
   }
+  @media (hover: none) {
+    &:hover {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
   img {
     margin-left: auto;
     height: 100%;
@@ -72,15 +96,14 @@
 }
 
 .logo-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: 9px;
   width: 350px;
   height: 350px;
   display: flex;
   flex-direction: column;
   background-size: 356px;
-  background-image: url("../../assets/tear_off_poster.png");
-  img {
+  background-image: url("../../assets/tear_off_poster_ds.png");
+  .logo {
     width: 75%;
     height: 110px;
     margin-top: 15px;
@@ -92,12 +115,23 @@
     color: black;
     font-size: 25px;
     cursor: pointer;
+
+    &:hover {
+      color: #8b4000;
+    }
+    @media (hover: none) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
   .socials-row {
     margin-top: 120px;
+    display: flex;
+    flex-wrap: nowrap;
   }
   .first {
-    margin-left: 49px;
+    margin-left: 37px;
   }
   .second {
     margin-left: 78px;
@@ -125,7 +159,7 @@
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 50px;
-  background-image: url("../../assets/wp2.jpeg");
+  background-image: url("https://wec-chef-bucket.s3.us-west-2.amazonaws.com/wp2.jpeg");
   background-repeat: repeat;
   filter: drop-shadow(1px 3px 3px #000000);
 
@@ -137,6 +171,7 @@
   }
   &.long {
     height: 600px;
+    margin-top: 100px;
   }
   .poster {
     width: 100%;
