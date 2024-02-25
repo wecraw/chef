@@ -22,6 +22,15 @@ export class JukeboxComponent {
 
   leftSongs: ISong[] = [
     {
+      name: 'Peach Funk',
+      fontSize: '14pt',
+      spotifyUrl: this.sanitizeUrl(
+        'https://open.spotify.com/embed/track/3nokHVueV9TLQrVEwzKsu3?utm_source=generator'
+      ),
+      albumArtUrl:
+        'https://i.scdn.co/image/ab67616d0000b273b0a7cc01ebd0e0d025450e85',
+    },
+    {
       name: 'Herbie Jam',
       fontSize: '14pt',
       spotifyUrl: this.sanitizeUrl(
@@ -41,15 +50,15 @@ export class JukeboxComponent {
     },
   ];
   rightSongs: ISong[] = [
-    {
-      name: 'Peach Funk',
-      fontSize: '14pt',
-      spotifyUrl: this.sanitizeUrl(
-        'https://open.spotify.com/embed/track/3nokHVueV9TLQrVEwzKsu3?utm_source=generator'
-      ),
-      albumArtUrl:
-        'https://i.scdn.co/image/ab67616d0000b273b0a7cc01ebd0e0d025450e85',
-    },
+    // {
+    //   name: 'Peach Funk',
+    //   fontSize: '14pt',
+    //   spotifyUrl: this.sanitizeUrl(
+    //     'https://open.spotify.com/embed/track/3nokHVueV9TLQrVEwzKsu3?utm_source=generator'
+    //   ),
+    //   albumArtUrl:
+    //     'https://i.scdn.co/image/ab67616d0000b273b0a7cc01ebd0e0d025450e85',
+    // },
     // this.emptySong,
   ];
 
