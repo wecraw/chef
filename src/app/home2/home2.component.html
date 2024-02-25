@@ -53,7 +53,13 @@
     >
       Music!
     </div>
-    <div class="menu-item">Merch!</div>
+    <div
+      class="menu-item"
+      (click)="onClick('merch')"
+      [ngClass]="{ active: scrollZone === 2 }"
+    >
+      Merch!
+    </div>
     <div class="menu-item">Pics!</div>
   </div>
 
@@ -72,16 +78,44 @@
       <!-- <div class="label">Tickets</div> -->
     </div>
   </div>
-  <div id="music" style="margin-bottom: 30px"></div>
+  <div id="music" style="margin-bottom: 30px; margin-top: 100px"></div>
 
   <div
     class="poster-container long"
-    style="transform: rotate(-0.5deg); margin-bottom: 100px"
+    style="transform: rotate(-0.5deg); margin-bottom: 50px"
   >
     <div class="header permanent-marker-regular">
       <div class="label">Fresh Beats!</div>
     </div>
     <app-jukebox [compact]="true"></app-jukebox>
   </div>
+  <div id="merch" style="margin-bottom: 30px"></div>
+
+  <div
+    class="poster-container merch"
+    style="transform: rotate(0.5deg); margin-bottom: 100px"
+  >
+    <div class="header alt anta">
+      <div class="label">-NEW MERCH-</div>
+    </div>
+    <div class="merch-carousel">
+      <div (click)="moveCarousel(-1)" class="col-1 left-arrow">
+        <i class="bi bi-caret-left-fill"></i>
+      </div>
+      <div class="col-10 img-wrapper">
+        <img
+          [ngClass]="{
+            'slide-in-left-short': slideIn,
+            'slide-out-right-short': slideOut
+          }"
+          [src]="merchLinks[carouselPosition]"
+        />
+      </div>
+      <div (click)="moveCarousel(1)" class="col-1 right-arrow">
+        <i class="bi bi-caret-right-fill"></i>
+      </div>
+    </div>
+  </div>
+
   <div class="filler"></div>
 </div>

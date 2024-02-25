@@ -1,11 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
 .background {
-  background-image: url("assets/wallpaper.jpg");
+  // background-image: url("assets/wallpaper.jpg");
   position: absolute;
   top: 0;
   left: 0;
 }
-body {
-  // background-color: #87ceeb;
+
+.slide-in-left {
+  -webkit-animation: slide-in-left 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: slide-in-left 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.slide-in-left-short {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-in-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-out-right {
+  -webkit-animation: slide-out-right 0.75s
+    cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+  animation: slide-out-right 0.75s cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+}
+
+.slide-out-right-short {
+  -webkit-animation: slide-out-right 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+    both;
+  animation: slide-out-right 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-out-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
 }

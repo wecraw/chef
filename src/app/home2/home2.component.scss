@@ -102,7 +102,7 @@
   display: flex;
   flex-direction: column;
   background-size: 356px;
-  background-image: url("../../assets/tear_off_poster_ds.png");
+  background-image: url("https://wec-chef-bucket.s3.us-west-2.amazonaws.com/tear_off_poster_ds.png");
   .logo {
     width: 75%;
     height: 110px;
@@ -157,11 +157,47 @@
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 50px;
   background-image: url("https://wec-chef-bucket.s3.us-west-2.amazonaws.com/wp2.jpeg");
   background-repeat: repeat;
   filter: drop-shadow(1px 3px 3px #000000);
+
+  &.merch {
+    display: flex;
+    flex-direction: column;
+
+    .merch-carousel {
+      display: flex;
+      .img-wrapper {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+        height: 330px;
+        width: 262px;
+        overflow: hidden;
+        img {
+          justify-self: center;
+          height: 326px;
+          max-width: 258px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 2px solid black;
+        }
+      }
+      .left-arrow,
+      .right-arrow {
+        align-self: center;
+        cursor: pointer;
+        font-size: 30px;
+        height: 45px;
+        width: 30px;
+        &:hover {
+          font-size: 36px;
+          transform: translateX(-3px) translateY(-3px);
+        }
+      }
+    }
+  }
 
   &:last-child {
     margin-bottom: 0;
@@ -171,8 +207,8 @@
   }
   &.long {
     height: 600px;
-    margin-top: 100px;
   }
+
   .poster {
     width: 100%;
     height: 100%;
@@ -188,10 +224,17 @@
     font-style: normal;
     letter-spacing: 1px;
   }
+
+  .anta {
+    font-family: "Anta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
+  }
   .header {
     height: 50px;
     width: 100%;
-    background-color: red;
+    background-color: #cc5500;
     border-bottom: 2px solid black;
     .label {
       line-height: 44px;
@@ -199,6 +242,17 @@
       font-weight: bold;
       text-align: center;
       color: yellow;
+    }
+
+    &.alt {
+      border-bottom: 0;
+      padding-top: 10px;
+      background-color: transparent;
+      .label {
+        color: #3f00ff;
+        font-size: 40px;
+        line-height: 48px;
+      }
     }
   }
 }

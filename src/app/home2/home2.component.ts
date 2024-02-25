@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { chefNames } from '../chefNames';
 import { ViewportScroller } from '@angular/common';
+import { merchLinks } from '../merchLinks';
 
 @Component({
   selector: 'app-home2',
@@ -9,7 +10,14 @@ import { ViewportScroller } from '@angular/common';
 })
 export class Home2Component {
   chefNames = chefNames;
+  merchLinks = merchLinks;
   scrollZone = 0;
+
+  //carousel
+  carouselPosition = 0;
+  slideIn = false;
+  slideOut = false;
+
   constructor(private viewportScroller: ViewportScroller) {}
 
   @HostListener('window:scroll', ['$event'])
@@ -22,7 +30,7 @@ export class Home2Component {
       0;
 
     // Define thresholds for different scroll zones
-    const zoneThresholds = [0, 600, 1200, 1500]; // Change these values as per your requirement
+    const zoneThresholds = [0, 600, 1200, 1800]; // Change these values as per your requirement
 
     // Find the current scroll zone based on scroll position
     for (let i = 0; i < zoneThresholds.length; i++) {
@@ -36,5 +44,22 @@ export class Home2Component {
 
   public onClick(elementId: string): void {
     this.viewportScroller.scrollToAnchor(elementId);
+  }
+
+  moveCarousel(direction: number) {
+    this.slideOut = true;
+
+    let that = this;
+    setTimeout(function () {
+      that.slideIn = true;
+      that.slideOut = false;
+      that.carouselPosition += direction;
+      if (that.carouselPosition < 0) {
+        that.carouselPosition = that.merchLinks.length - 1;
+      }
+      if (that.carouselPosition >= that.merchLinks.length) {
+        that.carouselPosition = 0;
+      }
+    }, 500); // 750 milliseconds = 0.75 seconds
   }
 }
