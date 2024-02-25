@@ -40,14 +40,14 @@
 
   <div class="menu">
     <div
-      (click)="onClick('shows')"
+      (click)="onClick('shows', 80)"
       class="menu-item"
       [ngClass]="{ active: scrollZone === 0 }"
     >
       Shows!
     </div>
     <div
-      (click)="onClick('music')"
+      (click)="onClick('music', 80)"
       class="menu-item"
       [ngClass]="{ active: scrollZone === 1 }"
     >
@@ -55,7 +55,7 @@
     </div>
     <div
       class="menu-item"
-      (click)="onClick('merch')"
+      (click)="onClick('merch', 80)"
       [ngClass]="{ active: scrollZone === 2 }"
     >
       Merch!
@@ -63,9 +63,11 @@
     <div class="menu-item">Pics!</div>
   </div>
 
-  <div id="shows" style="margin-bottom: 30px"></div>
-
-  <div class="poster-container first" style="transform: rotate(1deg)">
+  <div
+    id="shows"
+    class="poster-container first"
+    style="transform: rotate(1deg); margin-bottom: 100px"
+  >
     <img
       class="poster"
       src="https://wec-chef-bucket.s3.us-west-2.amazonaws.com/upcoming.jpeg"
@@ -78,9 +80,9 @@
       <!-- <div class="label">Tickets</div> -->
     </div>
   </div>
-  <div id="music" style="margin-bottom: 30px; margin-top: 100px"></div>
 
   <div
+    id="music"
     class="poster-container long"
     style="transform: rotate(-0.5deg); margin-bottom: 50px"
   >
@@ -89,9 +91,8 @@
     </div>
     <app-jukebox [compact]="true"></app-jukebox>
   </div>
-  <div id="merch" style="margin-bottom: 30px"></div>
-
   <div
+    id="merch"
     class="poster-container merch"
     style="transform: rotate(0.5deg); margin-bottom: 65px"
   >

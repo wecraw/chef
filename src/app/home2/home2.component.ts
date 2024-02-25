@@ -42,8 +42,13 @@ export class Home2Component {
     }
   }
 
-  public onClick(elementId: string): void {
-    this.viewportScroller.scrollToAnchor(elementId);
+  public onClick(elementId: string, offset?: number): void {
+    offset = offset || 0;
+    const element = document.getElementById(elementId);
+    if (element) {
+      const offsetPosition = element.offsetTop - offset;
+      this.viewportScroller.scrollToPosition([0, offsetPosition]);
+    }
   }
 
   moveCarousel(direction: number) {
