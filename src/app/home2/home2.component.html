@@ -104,11 +104,13 @@
       </div>
       <div class="col-10 img-wrapper">
         <img
+          *ngFor="let link of merchLinks; index as i"
           [ngClass]="{
             'slide-in-left-short': slideIn,
             'slide-out-right-short': slideOut
           }"
-          [src]="merchLinks[carouselPosition]"
+          [src]="link"
+          [style.display]="i === carouselPosition ? 'block' : 'none'"
         />
       </div>
       <div (click)="moveCarousel(1)" class="col-1 right-arrow">
