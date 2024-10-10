@@ -53,14 +53,14 @@
     >
       Music!
     </div>
-    <div
+    <a
+      [routerLink]="['/merch']"
       class="menu-item"
-      (click)="onClick('merch', 80)"
       [ngClass]="{ active: scrollZone === 2 }"
     >
       Merch!
-    </div>
-    <div class="menu-item">Pics!</div>
+    </a>
+    <!-- <div class="menu-item">Samples!</div> -->
   </div>
 
   <div
